@@ -1,4 +1,4 @@
-from flask import Flask , render_template
+from flask import Flask , render_template,request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -20,9 +20,17 @@ class Message(db.Model):
     created_at =db.Column(db.DateTime(),default =datetime.utcnow)
 
 
-@app.route("/<name>")
+@app.route("/<name>", methods=['GET','POST'])
 def start_page(name):
+    if request.method == 'POST':
+        new_messege = Message(
+            user = name,
+            content = request.form['content']
+        )
+        db.session.add(new_messege)
+        db.session.commit()
     return render_template('index.html')
+db.create_all()
 
 if __name__ == "__main__":
-    app.run(debug=True)  
+    app.run(debug=True)
