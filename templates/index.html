@@ -15,11 +15,21 @@
             right: 80px;
             left: 80px;
             width: calc(100% - 160px);
+                }
+        .date_class{
+          font-size: 10px;
+          position: absolute;
+          right: 4px;
+          bottom: 4px;
+          color: rgb(0, 0,0, 0.5);
 
+
+
+
+            }
             
-        }
     </style>
-
+  
 </head>
 <body>
 
@@ -35,29 +45,22 @@
 
  <div class="container">
 
-
-        <div class="d-flex  justify-content-end mt-5">
-            <div class="card">
-                <div class="card-body">
-                  Hey! wie geht es dir?.
-                </div>
-              </div>
-        
-
-        </div>
+    {% for msg in messeges  %}
+      <div class="d-flex  {%if name == msg.user%}justify-content-end {% else %}justify-content-start{% endif %}
+         mt-5">
+        <div class="card">
+            <div class="card-body">
+              <b>{{msg.user}}: </b>
+             {{msg.content}}
 
 
-        <div class="d-flex  justify-content-start mt-5">
-            <div class="card">
-                <div class="card-body">
-                  hey!es geht mir gut!danke!
-                </div>
-              </div>
-        
+             <span class="date_class">{{msg.created_at.strftime('%d.%m.%y %H:%m')}}</span>
+            </div>
+          </div>
+    
 
-        </div>
-
-
+    </div>  
+    {% endfor %}
 
         <form class="input-group mb-3 my-form" action=""  method="POST">
             <input type="text" name="content" class="form-control" placeholder="schreiben Sie hier Ihre Nachricht bitte">

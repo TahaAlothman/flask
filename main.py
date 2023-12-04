@@ -29,8 +29,10 @@ def start_page(name):
         )
         db.session.add(new_messege)
         db.session.commit()
-    return render_template('index.html')
+    messeges =Message.query.order_by(Message.created_at).all()
+    return render_template('index.html',messeges=messeges,name=name)
 db.create_all()
+
 
 if __name__ == "__main__":
     app.run(debug=True)
