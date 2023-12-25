@@ -8,4 +8,7 @@ The project utilizes various technologies and frameworks such as Flask, SQLAlche
 
 ## Project Screenshot
 ![](https://github.com/TahaAlothman/flask/blob/main/screencapture.png)
+
+
+
 [![Built with Python](https://img.shields.io/badge/Built%20with-Python-blue)](https://www.python.org/)
