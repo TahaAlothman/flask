@@ -12,3 +12,4 @@ The project utilizes various technologies and frameworks such as Flask, SQLAlche
 
 
 [![Built with Python](https://img.shields.io/badge/Built%20with-Python-blue)](https://www.python.org/)
+[![Language](https://img.shields.io/badge/Language-Python-blue.svg)](https://www.python.org/)
