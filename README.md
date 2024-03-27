@@ -1,4 +1,4 @@
-# flask
+# Flask
 
 # simple chat messeges with Flask
 a simple chat messaging application developed using Flask, a popular Python web framework. The project aims to provide a basic chat functionality where users can exchange messages in real-time.
